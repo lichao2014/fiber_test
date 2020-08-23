@@ -49,10 +49,7 @@ struct QueueNode
 
 struct QueueSentry : QueueNode
 {
-    QueueSentry() noexcept
-    {
-        clear();
-    }
+    QueueSentry() noexcept { clear(); }
 
     void clear() noexcept { this->next = this; this->prev = this; }
     bool empty() const noexcept { return this == this->next; }
